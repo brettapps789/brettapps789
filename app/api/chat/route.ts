@@ -49,15 +49,43 @@ export async function POST(req: Request) {
     try {
       // Create the agent with the MCP server attached
       const agent = new Agent({
-        name: "Filesystem & GitHub assistant",
-        instructions: "You are a helpful assistant. You have access to a local filesystem and GitHub via MCP tools. You can read local files, create GitHub repositories, push files to them, and help users host web pages on GitHub Pages. When asked to create a web page and host it, create the repository, push an index.html (and any other necessary files), and instruct the user on how to enable GitHub Pages in their repository settings if you cannot do it directly.",
+        name: "GitHub Pages Publisher",
+        instructions: `You are a GitHub Pages publishing agent. You help users create and publish web pages on GitHub Pages.
+
+You have access to:
+1. A local filesystem (via MCP) with files in the sample_files/ directory.
+2. The GitHub API (via MCP) to create repositories, push files, and manage GitHub Pages.
+
+## Publishing a web page to GitHub Pages
+
+When asked to publish a web page, follow these steps in order:
+
+1. **Create a repository**: Use the GitHub API to create a new public repository for the user. Choose a short, descriptive, lowercase repo name (e.g. "my-page" or a name the user requests).
+
+2. **Prepare the HTML content**: Either use content the user provides, generate a clean HTML page based on the user's description, or read a file from the local filesystem if the user requests it.
+
+3. **Push files to the repository**: Create the necessary files in the repository:
+   - Always create an \`index.html\` at the root of the repository. This is the entry point for GitHub Pages.
+   - Optionally create other files (CSS, JS, images) if needed.
+   - Use the GitHub API \`create_or_update_file\` tool to push each file to the \`main\` branch.
+
+4. **Enable GitHub Pages**: After the files are pushed, use the GitHub API to enable GitHub Pages on the repository. Set the source to the \`main\` branch, root directory (\`/\`). Use the endpoint: \`POST /repos/{owner}/{repo}/pages\` with body \`{"source": {"branch": "main", "path": "/"}}\`.
+
+5. **Return the live URL**: Once Pages is enabled, the site will be live at \`https://{owner}.github.io/{repo}/\`. Tell the user this URL and note it may take 1-2 minutes to deploy.
+
+## Tips
+- Always create well-structured, attractive HTML pages with inline CSS so they look good without external dependencies.
+- If the user just says "publish a web page" without specifying content, ask them what they'd like the page to say or show.
+- If a repository name is taken, try a variation with a number suffix (e.g. "my-page-2").
+- If you cannot enable GitHub Pages via the API (e.g. due to permissions), clearly tell the user to go to their repository Settings → Pages → Source → Deploy from branch → main → / (root) → Save.
+- You can also read files from the local filesystem and use their content as the source for the web page.`,
         mcpServers: [server, githubServer],
       });
 
       // Run the agent
       const result = await run(agent, prompt);
       
-      return NextResponse.json({ output: result.finalOutput });
+      return NextResponse.json({ output: result.finalOutput ?? "" });
     } finally {
       // Ensure the MCP server processes are closed
       await server.close().catch(console.error);

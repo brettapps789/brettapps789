@@ -13,7 +13,7 @@ export default function Home() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Hello! I am an agent connected to a local filesystem and GitHub via MCP. You can ask me to read local files, or ask me to create a GitHub repository and host a web page on GitHub Pages. What would you like to do?",
+      content: "Hello! I'm your GitHub Pages publishing agent. I can create a GitHub repository and publish a web page on GitHub Pages for you — just tell me what you'd like to publish!\n\nFor example:\n- *\"Create a personal portfolio page for Jane Doe, a software engineer from Seattle\"*\n- *\"Publish a landing page for my project called Rocket App\"*\n- *\"Read sample_files/project_info.txt and create a web page about it\"*",
     },
   ]);
   const [input, setInput] = useState("");
@@ -79,16 +79,16 @@ export default function Home() {
           </div>
           <div>
             <h1 className="text-xl font-semibold text-gray-900 tracking-tight">
-              Filesystem & GitHub Agent
+              GitHub Pages Publisher
             </h1>
             <p className="text-sm text-gray-500">
-              Powered by OpenAI Agents SDK & MCP
+              Powered by OpenAI Agents SDK &amp; MCP
             </p>
           </div>
         </div>
         <div className="hidden sm:flex items-center gap-2 text-sm text-gray-600 bg-gray-100 px-3 py-1.5 rounded-full">
           <FileText className="w-4 h-4" />
-          <span>sample_files/</span>
+          <span>github.io</span>
         </div>
       </header>
 
@@ -145,7 +145,7 @@ export default function Home() {
               </div>
               <div className="bg-white border border-gray-200 px-4 py-3 rounded-2xl rounded-tl-sm shadow-sm flex items-center gap-2 text-gray-500">
                 <Loader2 className="w-4 h-4 animate-spin" />
-                <span className="text-sm">Agent is thinking and reading files...</span>
+                <span className="text-sm">Agent is working on it...</span>
               </div>
             </div>
           )}
@@ -164,7 +164,7 @@ export default function Home() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask me to read files or create a GitHub repo..."
+              placeholder="Describe the web page you want to publish..."
               className="flex-1 bg-transparent border-none focus:ring-0 px-4 py-2 text-gray-900 placeholder-gray-500 outline-none"
               disabled={isLoading}
             />
@@ -178,7 +178,7 @@ export default function Home() {
           </form>
           <div className="text-center mt-3">
             <p className="text-xs text-gray-400">
-              The agent uses <code className="bg-gray-100 px-1 py-0.5 rounded">server-filesystem</code> and <code className="bg-gray-100 px-1 py-0.5 rounded">server-github</code> MCP servers.
+              The agent uses <code className="bg-gray-100 px-1 py-0.5 rounded">server-filesystem</code> and <code className="bg-gray-100 px-1 py-0.5 rounded">server-github</code> MCP servers to publish your page.
             </p>
           </div>
         </div>

@@ -1,5 +1,5 @@
 {
-  "name": "",
-  "description": "",
+  "name": "GitHub Pages Publisher Agent",
+  "description": "An AI agent that publishes web pages on GitHub Pages. Describe the page you want and the agent will create a GitHub repository, generate the HTML, and enable GitHub Pages automatically.",
   "requestFramePermissions": []
 }

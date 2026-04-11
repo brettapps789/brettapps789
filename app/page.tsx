@@ -25,7 +25,7 @@ const PHASE_LABELS: Record<string, string> = {
   "5": "Deployment & Optimisation",
 };
 
-const STATUS_COLOURS: Record<string, string> = {
+const STATUS_COLORS: Record<string, string> = {
   "processing": "bg-amber-100 text-amber-800 border-amber-300",
   "waiting for approval": "bg-blue-100 text-blue-800 border-blue-300",
   "complete": "bg-emerald-100 text-emerald-800 border-emerald-300",
@@ -141,8 +141,8 @@ export default function Home() {
   };
 
   const statusKey = projectStatus?.status.toLowerCase() ?? "";
-  const statusColour =
-    STATUS_COLOURS[statusKey] ?? "bg-gray-100 text-gray-700 border-gray-300";
+  const statusColor =
+    STATUS_COLORS[statusKey] ?? "bg-gray-100 text-gray-700 border-gray-300";
   const phaseLabel = projectStatus
     ? PHASE_LABELS[projectStatus.phase] ?? `Phase ${projectStatus.phase}`
     : null;
@@ -188,7 +188,7 @@ export default function Home() {
               </span>
               <span className="text-gray-400">|</span>
               <span
-                className={`px-2 py-0.5 rounded-full text-xs font-semibold border ${statusColour}`}
+                className={`px-2 py-0.5 rounded-full text-xs font-semibold border ${statusColor}`}
               >
                 {projectStatus.status}
               </span>

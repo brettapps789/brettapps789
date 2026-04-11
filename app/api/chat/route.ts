@@ -541,7 +541,7 @@ Phase 3: Design & Production
 Phase 4: Web & Conversion
   → Web Dev Agent → SEO Agent → Integration Agent
 
-Phase 5: Deployment & Optimization
+Phase 5: Deployment & Optimisation
   → Deployment Agent → CI/CD Agent → Testing Agent → Analytics Agent
 
 You MUST move every project through these 5 phases in strict sequential order.

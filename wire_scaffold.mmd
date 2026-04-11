@@ -1,0 +1,14 @@
+graph TD
+  Orchestrator --> Manager
+  Orchestrator --> Writer
+  Orchestrator --> Analyst
+  Manager --"check/create subscription"--> StripeAPI
+  Manager --"read/write rows"--> GoogleSheets
+  Manager --"list/upload files"--> GoogleDrive
+  Writer --"create/append Doc"--> GoogleDocs
+  Writer --"send email"--> GmailAPI
+  Analyst --"fetch report data"--> GoogleDrive
+  Analyst --"generate insight"--> VertexAI
+  Analyst --"write analysis row"--> GoogleSheets
+  Manager --"notify results"--> Writer
+  Analyst --"return insights"--> Manager

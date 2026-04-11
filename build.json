@@ -1,0 +1,41 @@
+{
+  "project": "Agent Workforce (AAW)",
+  "version": "2.0.0",
+  "description": "Multi-MCP orchestration codebase for @Manager, @Writer, and @Analyst agents",
+  "python_version": ">=3.10",
+  "environment": {
+    "GOOGLE_APPLICATION_CREDENTIALS": "path/to/service_account.json",
+    "GOOGLE_SHEET_ID": "YOUR_GOOGLE_SHEET_ID",
+    "GOOGLE_DRIVE_FOLDER_ID": "YOUR_GOOGLE_DRIVE_FOLDER_ID",
+    "STRIPE_API_KEY": "sk_test_YOUR_STRIPE_SECRET_KEY",
+    "STRIPE_WEBHOOK_SECRET": "whsec_YOUR_WEBHOOK_SECRET",
+    "VERTEX_AI_PROJECT": "YOUR_GCP_PROJECT_ID",
+    "VERTEX_AI_LOCATION": "us-central1",
+    "VERTEX_AI_MODEL": "gemini-1.5-pro",
+    "GMAIL_SENDER": "your-email@example.com"
+  },
+  "agents": [
+    {
+      "name": "ManagerAgent",
+      "module": "agents/manager_agent.py",
+      "role": "Orchestrates billing, data sync, and dashboard updates"
+    },
+    {
+      "name": "WriterAgent",
+      "module": "agents/writer_agent.py",
+      "role": "Generates Docs and sends Gmail updates"
+    },
+    {
+      "name": "AnalystAgent",
+      "module": "agents/analyst_agent.py",
+      "role": "Processes data and executes Vertex AI reasoning"
+    }
+  ],
+  "utils": [
+    "utils/google_workspace.py",
+    "utils/stripe_api.py",
+    "utils/vertex_ai.py"
+  ],
+  "entry_point": "orchestrator.py",
+  "test_script": "test_workflow.py"
+}

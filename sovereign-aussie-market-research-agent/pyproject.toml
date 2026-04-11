@@ -1,0 +1,33 @@
+[project]
+name = "sovereign-aussie-market-research-agent"
+version = "0.1.0"
+description = "Market Research Bruce — Sovereign MCP Server for the Australian publishing market."
+authors = [{ name = "Brett Sjoberg", email = "brett@fairdinkumpublishing.com.au" }]
+readme = "README.md"
+requires-python = ">=3.11"
+
+dependencies = [
+    "mcp[cli]>=1.0.0",
+    "fastmcp>=0.1.0",
+    "httpx>=0.27.0",
+    "python-dotenv>=1.0.0",
+    "pytrends>=4.9.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "ruff>=0.4.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"

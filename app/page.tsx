@@ -204,7 +204,7 @@ export default function Home() {
             </form>
             <div className="text-center mt-3">
               <p className="text-xs text-gray-400">
-                  14 specialist agents: Ebook Builder, Market Research, Advertising, Web Dev, SEO, Stripe, Integration, Deployment, CI/CD, Testing, Analytics &amp; more.
+                  11 specialist agents: Ebook Builder, Market Research, Advertising, Web Dev, SEO, Stripe, Integration, Deployment, CI/CD, Testing &amp; Analytics.
                 </p>
             </div>
           </div>

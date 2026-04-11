@@ -13,7 +13,7 @@ export default function Home() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Hello! I am the Ebook Building AI Agent Workforce. I can help you write, compile, and publish EPUB ebooks. I can also create GitHub repositories, generate landing pages linked to brettapps.com, and host them on GitHub Pages. Need help with marketing or monetization? I can hand off to my Market Research, Advertising, and Stripe Agents! What would you like to do today?",
+      content: "G'day! I'm the AAW Orchestrator — the command centre of Fair Dinkum Publishing's Autonomous Author Workforce. I coordinate a full 7-agent pipeline across three phases:\n\n**Phase 1 — Intelligence & Strategy**\n- 🔍 Research Agent: Gap analysis & keyword trends across AU/NZ/UK/US/CA\n- 📊 Market Analysis Agent: Niche Score, title options & pricing tiers\n\n**Phase 2 — Content Creation**\n- ✍️ Writing Agent: \"True Blue\" ghostwriter with Hook/Takeaway chapters\n- ✂️ Editing Agent: Change Log edits & brand voice Tone Alerts\n- 🔎 Fact-Checking Agent: Traffic Light verification (🟢/🟡/🔴)\n\n**Phase 3 — Design & Production**\n- 🎨 Design Agent: Visual Brand Kit with 3 cover directions\n- 📦 Formatting Agent: Final EPUB compilation, print PDF guidance\n\nI can also hand off to the **Advertising Agent** and **Stripe Agent** for launch & monetisation.\n\nSay **\"Run the full AAW pipeline\"** to kick off the entire workflow, or ask for a specific phase or agent. What'll it be?",
     },
   ]);
   const [input, setInput] = useState("");
@@ -109,10 +109,10 @@ export default function Home() {
             </div>
             <div>
               <h1 className="text-xl font-semibold text-gray-900 tracking-tight">
-                Ebook Building AI Agent Workforce
+                AAW — Fair Dinkum Publishing
               </h1>
               <p className="text-sm text-gray-500">
-                Powered by OpenAI Agents SDK, MCP, and Multi-Agent Handoffs
+                Autonomous Author Workforce · 7 Agents · 3 Phases · Powered by OpenAI Agents SDK
               </p>
             </div>
           </div>
@@ -190,7 +190,7 @@ export default function Home() {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask me to build an EPUB, research the market, or add a Stripe Buy button..."
+                placeholder="Run the full AAW pipeline, research a niche, write a chapter, or compile an EPUB..."
                 className="flex-1 bg-transparent border-none focus:ring-0 px-4 py-2 text-gray-900 placeholder-gray-500 outline-none"
                 disabled={isLoading}
               />
@@ -204,7 +204,7 @@ export default function Home() {
             </form>
             <div className="text-center mt-3">
               <p className="text-xs text-gray-400">
-                The agent uses <code className="bg-gray-100 px-1 py-0.5 rounded">server-filesystem</code>, <code className="bg-gray-100 px-1 py-0.5 rounded">server-github</code>, and <code className="bg-gray-100 px-1 py-0.5 rounded">compile_epub</code>.
+                Uses <code className="bg-gray-100 px-1 py-0.5 rounded">server-filesystem</code>, <code className="bg-gray-100 px-1 py-0.5 rounded">server-github</code>, <code className="bg-gray-100 px-1 py-0.5 rounded">compile_epub</code>, and <code className="bg-gray-100 px-1 py-0.5 rounded">enable_github_pages</code> · 9 specialist agents
               </p>
             </div>
           </div>

@@ -13,7 +13,7 @@ export default function Home() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Hello! I am an agent connected to a local filesystem via MCP. You can ask me to read the files in the `sample_files` directory (e.g., `project_info.txt` or `todos.md`). What would you like to know?",
+      content: "Hello! I am an agent connected to a local filesystem and GitHub via MCP. You can ask me to read local files, or ask me to create a GitHub repository and host a web page on GitHub Pages. What would you like to do?",
     },
   ]);
   const [input, setInput] = useState("");
@@ -79,7 +79,7 @@ export default function Home() {
           </div>
           <div>
             <h1 className="text-xl font-semibold text-gray-900 tracking-tight">
-              Local Filesystem Agent
+              Filesystem & GitHub Agent
             </h1>
             <p className="text-sm text-gray-500">
               Powered by OpenAI Agents SDK & MCP
@@ -164,7 +164,7 @@ export default function Home() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask about the project info or todos..."
+              placeholder="Ask me to read files or create a GitHub repo..."
               className="flex-1 bg-transparent border-none focus:ring-0 px-4 py-2 text-gray-900 placeholder-gray-500 outline-none"
               disabled={isLoading}
             />
@@ -178,7 +178,7 @@ export default function Home() {
           </form>
           <div className="text-center mt-3">
             <p className="text-xs text-gray-400">
-              The agent uses the <code className="bg-gray-100 px-1 py-0.5 rounded">@modelcontextprotocol/server-filesystem</code> to read local files.
+              The agent uses <code className="bg-gray-100 px-1 py-0.5 rounded">server-filesystem</code> and <code className="bg-gray-100 px-1 py-0.5 rounded">server-github</code> MCP servers.
             </p>
           </div>
         </div>

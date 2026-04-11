@@ -12,6 +12,8 @@
   "dependencies": {
     "@google/genai": "^1.17.0",
     "@hookform/resolvers": "^5.2.1",
+    "@modelcontextprotocol/server-filesystem": "^2026.1.14",
+    "@modelcontextprotocol/server-github": "^2025.4.8",
     "@openai/agents": "^0.8.3",
     "autoprefixer": "^10.4.21",
     "class-variance-authority": "^0.7.1",

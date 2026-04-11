@@ -485,6 +485,11 @@ When asked to create a Buy Now button:
       });
 
       // ─── Main Orchestrator ────────────────────────────────────────────────────
+      // HITL (Human-in-the-Loop) gates are enforced via the agents' instructions.
+      // Each specialist agent is instructed to pause and surface a decision point
+      // to the user before continuing. The user's next chat message resumes the
+      // flow, relying on the LLM to honour the pause instruction — which is the
+      // standard pattern for the OpenAI Agents SDK's conversational model.
 
       // Create the AAW Orchestrator with all agents as handoffs
       const agent = new Agent({

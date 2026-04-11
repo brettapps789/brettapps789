@@ -1,0 +1,20 @@
+{
+  "agent_id": "mra_001",
+  "agent_name": "Market Research Bruce",
+  "version": "1.0.0",
+  "business_context": {
+    "company_name": "Fair Dinkum Publishing",
+    "owner": "Brett Sjoberg",
+    "location": "Hackham, SA 5163",
+    "primary_genres": [
+      "Aussie Fiction",
+      "Outback Non-Fiction",
+      "Business",
+      "Self-Help",
+      "True Blue Crime"
+    ],
+    "target_markets": ["AU", "NZ", "UK", "US", "CA"],
+    "platforms": ["Amazon KDP", "IngramSpark", "Smashwords"],
+    "pricing_currency": "AUD"
+  }
+}

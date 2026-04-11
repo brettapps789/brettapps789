@@ -13,7 +13,7 @@ export default function Home() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Hello! I am the Ebook Building AI Agent Workforce. I can help you write, compile, and publish EPUB ebooks. I can also create GitHub repositories, generate landing pages linked to brettapps.com, and host them on GitHub Pages. Need help with marketing or monetization? I can hand off to my Market Research, Advertising, and Stripe Agents! What would you like to do today?",
+      content: "Hello! I am the Ebook Building AI Agent Workforce. I can help you write, compile, and publish EPUB ebooks. I can also create GitHub repositories, generate landing pages linked to brettapps.com, and host them on GitHub Pages. Need help with marketing or monetization? I can hand off to my Market Research and Advertising Agents! Want a high-converting landing page? Ask for the Web Development Agent. Need SEO, Stripe payments, automated CI/CD, QA testing, or Google Analytics? I have specialist agents for all of that too! What would you like to do today?",
     },
   ]);
   const [input, setInput] = useState("");
@@ -190,7 +190,7 @@ export default function Home() {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask me to build an EPUB, research the market, or add a Stripe Buy button..."
+                placeholder="Ask me to build an EPUB, create a landing page, run SEO, set up Stripe, deploy, or launch CI/CD..."
                 className="flex-1 bg-transparent border-none focus:ring-0 px-4 py-2 text-gray-900 placeholder-gray-500 outline-none"
                 disabled={isLoading}
               />
@@ -204,8 +204,8 @@ export default function Home() {
             </form>
             <div className="text-center mt-3">
               <p className="text-xs text-gray-400">
-                The agent uses <code className="bg-gray-100 px-1 py-0.5 rounded">server-filesystem</code>, <code className="bg-gray-100 px-1 py-0.5 rounded">server-github</code>, and <code className="bg-gray-100 px-1 py-0.5 rounded">compile_epub</code>.
-              </p>
+                  14 specialist agents: Ebook Builder, Market Research, Advertising, Web Dev, SEO, Stripe, Integration, Deployment, CI/CD, Testing, Analytics &amp; more.
+                </p>
             </div>
           </div>
         </footer>

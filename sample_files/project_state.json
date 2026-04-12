@@ -1,0 +1,55 @@
+{
+  "projectName": "No Active Project",
+  "currentPhase": 0,
+  "currentAgent": "None",
+  "status": "Waiting for Input",
+  "phases": {
+    "1": {
+      "name": "Intelligence & Strategy",
+      "agents": ["Research Agent", "Market Analysis Agent"],
+      "status": "not_started",
+      "researchReport": null,
+      "marketAnalysis": null,
+      "nicheScore": null,
+      "targetKeywords": []
+    },
+    "2": {
+      "name": "Content Creation",
+      "agents": ["Writing Agent", "Editing Agent", "Fact-Checking Agent"],
+      "status": "not_started",
+      "outline": null,
+      "chapters": [],
+      "editedContent": null,
+      "factCheckReport": null
+    },
+    "3": {
+      "name": "Design & Production",
+      "agents": ["Design Agent", "Formatting Agent"],
+      "status": "not_started",
+      "designConcept": null,
+      "coverDescription": null,
+      "epubPath": null,
+      "downloadUrl": null
+    },
+    "4": {
+      "name": "Web & Conversion",
+      "agents": ["Web Dev Agent", "SEO Agent", "Integration Agent"],
+      "status": "not_started",
+      "landingPageHtml": null,
+      "githubRepo": null,
+      "seoMeta": null,
+      "stripeButtonHtml": null
+    },
+    "5": {
+      "name": "Deployment & Optimization",
+      "agents": ["Deployment Agent", "CI/CD Agent", "Testing Agent", "Analytics Agent"],
+      "status": "not_started",
+      "deployedUrl": null,
+      "cicdPipeline": null,
+      "testResults": null,
+      "analyticsSetup": null
+    }
+  },
+  "humanApprovals": [],
+  "lastUpdated": null
+}
